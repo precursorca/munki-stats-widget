@@ -4,6 +4,7 @@
 > January 7, 2019  
 > Alex Narvey / Precursor.ca  
 
+![Munki Stats Widget](https://github.com/precursorca/munki-stats-widget/munki-stats-widget.png)
 
 A custom MunkiReport 4.0 Stats Widget to show statistics similar to early versionss of Munki.
 
