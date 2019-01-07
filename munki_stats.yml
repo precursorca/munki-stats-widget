@@ -1,0 +1,4 @@
+display_name: Stats Dashboard
+hotkey: '3'
+row1:
+    munki_stats:
