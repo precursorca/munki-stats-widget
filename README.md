@@ -1,6 +1,6 @@
 # munki-stats-widget
 
-> v. 1.0 
+> v. 1.0.1 
 > January 7, 2019  
 > Alex Narvey / Precursor.ca  
 
@@ -24,7 +24,8 @@ Notes:
 - The formatting is borrowed from the MS_Office module.
 - The Pending count is a total of Pending Munki Installs and Pending AppleSUS Installs
 
-* January 7, 2019 Version 1.0 
+* January 7, 2019 Version 1.0
+ * January 7, 2019 Version 1.0.1 - Some bug fixes to pending and data calls.
 
 ## Contributors
 * Alex Narvey
