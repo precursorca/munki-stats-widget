@@ -28,6 +28,22 @@ $(document).on('appUpdate', function(e, lang) {
         panel.empty();
         
 
+		//If install_succeeded_munki array is missing use null to provide numerical zero
+		 if (data['install_succeeded_munki']==null) {
+         var munkiInstalled =  0 ;
+         } else {
+         var munkiInstalled = Number(data['install_succeeded_munki'].total_items);
+         }
+		//If install_succeeded__applesus array is missing use null to provide numerical zero
+         if (data['install_succeeded__applesus']==null) {
+         var appleInstalled =  0  ;
+         } else {
+         var appleInstalled = Number(data['install_succeeded__applesus'].total_items);
+         }
+		//Get successful install total;
+		 var totalInstalled = (munkiInstalled.valueOf() + appleInstalled.valueOf());
+
+
 		//If pending_installs_munki array is missing use null to provide numerical zero
 		 if (data['pending_install_munki']==null) {
          var munkiPending =  0 ;
@@ -46,18 +62,24 @@ $(document).on('appUpdate', function(e, lang) {
 		
         // Set blocks, disable if zero
         if(data['installed_munki'].clients!=null){
-            panel.append(' <a href="'+baseUrl+'" class="btn btn-info"><span class="bigger-150">'+data['installed_munki'].clients+'</span><br>'+i18n.t('client.clients')+'</a>');
+            panel.append(' <a href="'+baseUrl+'" class="btn btn-info"><span class="bigger-150">'+data['installed_munki'].clients+'</span><br>'+i18n.t('Computers')+'</a>');
         } else {
-            panel.append(' <a href="'+baseUrl+'" class="btn btn-info disabled"><span class="bigger-150">'+data['installed_munki'].clients+'</span><br>'+i18n.t('client.clients')+'</a>');
+            panel.append(' <a href="'+baseUrl+'" class="btn btn-info disabled"><span class="bigger-150">'+data['installed_munki'].clients+'</span><br>'+i18n.t('Computers')+'</a>');
         }
 
         if(data['installed_munki'].total_items!=null){
-            panel.append(' <a href="https://munkireport.precursor.ca/index.php?/module/managedinstalls/listing/#installed" class="btn btn-success"><span class="bigger-150">'+data['installed_munki'].total_items+'</span><br>'+i18n.t('Installs')+'</a>');
+            panel.append(' <a href="https://munkireport.precursor.ca/index.php?/module/managedinstalls/listing/#installed" class="btn btn-primary"><span class="bigger-150">'+data['installed_munki'].total_items+'</span><br>'+i18n.t('Software')+'</a>');
         } else {
-            panel.append(' <a href="'+baseUrl+'" class="btn btn-success disabled"><span class="bigger-150">'+data['installed_munki'].total_items+'</span><br>'+i18n.t('Installs')+'</a>');
+            panel.append(' <a href="'+baseUrl+'" class="btn btn-primary disabled"><span class="bigger-150">'+data['installed_munki'].total_items+'</span><br>'+i18n.t('Software')+'</a>');
         }
 
-        if(totalPending != "0"){
+        if(totalInstalled != "0"){
+            panel.append(' <a href="https://munkireport.precursor.ca/index.php?/module/managedinstalls/listing/#install_succeeded" class="btn btn-success"><span class="bigger-150">'+totalInstalled+'</span><br>'+i18n.t('Installed')+'</a>');
+        } else {
+            panel.append(' <a href="'+baseUrl+'" class="btn btn-success disabled"><span class="bigger-150">'+"0"+'</span><br>'+i18n.t('Installed')+'</a>');
+        }
+
+       if(totalPending != "0"){
         	panel.append(' <a href="https://munkireport.precursor.ca/index.php?/module/managedinstalls/listing/#pending_install" class="btn btn-warning"><span class="bigger-150">'+totalPending+'</span><br>'+i18n.t('pending')+'</a>');
         } else {
             panel.append(' <a href="'+baseUrl+'" class="btn btn-warning disabled"><span class="bigger-150">'+"0"+'</span><br>'+i18n.t('pending')+'</a>');
