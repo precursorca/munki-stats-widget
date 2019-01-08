@@ -1,10 +1,10 @@
 # Custom MunkiReport Munki Stats Widget
 
-> v. 1.0.4 
+> v. 1.0.5 
 > January 8, 2019  
 > Alex Narvey / Precursor.ca  
 
-![munki_stats_widget  view](https://github.com/precursorca/assets/pics/munki_stats_widget.png)
+![munki_stats_widget  view](https://github.com/precursorca/munki-stats-widget/blob/master/munki_stats_widget.png)
 
 A custom munkireport 4.0 Stats Widget to show statistics similar to early versions of munkireport 2.
 
@@ -28,6 +28,7 @@ Notes:
 
 Release Notes:
 
+* January 8, 2019 Version 1.0.5 - Fixed Grahpic url. 
 * January 8, 2019 Version 1.0.4 - Updated the grahpic to show new button. 
 * January 8, 2019 Version 1.0.3 - Added an Installs button for successful installs to show what has been updated (combining successful munki and applesus installs). Renamed "Clients" to "Computers", and "Installs" to "Software" (to indicate what is managed).
 * January 8, 2019 Version 1.0.2 - Now based on John Eberle's custom Get_Stats function. Now deals properly with empty arrays by displaying a disabled zero button such as when there are no pending installs or no failed installs. Changed the Button urls to get to appropriate items. Edited the button labels to standardize capitalization. Tested with Machine Group filtering.
