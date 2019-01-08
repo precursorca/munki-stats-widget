@@ -1,6 +1,6 @@
 # Custom MunkiReport Munki Stats Widget
 
-> v. 1.0.5 
+> v. 1.0.6 
 > January 8, 2019  
 > Alex Narvey / Precursor.ca  
 
@@ -12,9 +12,11 @@ No warrantee is offered. Neither express nor implied. Use at your own risk.
 
 To use:
 
-1) Place the munki_stats_widget.php file inside the local/views/widgets directory of MunkiReport 4
+1) Replace the get_stats function in managedinstalls/managedinstalls_controller.php with the code provided by John Eberle in the file Custom Get_Stats Function.txt
 
-2) Call it from a dashboard or make a custom dashboard with a .yml file in /local/dashboards
+2) Place the munki_stats_widget.php file inside the local/views/widgets directory of MunkiReport 4
+
+3) Call it from a dashboard or make a custom dashboard with a .yml file in /local/dashboards
 
 Notes:
 
@@ -28,6 +30,7 @@ Notes:
 
 Release Notes:
 
+* January 8, 2019 Version 1.0.6 - Included instructions for replacing get_stats function in managedinstalls_contoller.php. 
 * January 8, 2019 Version 1.0.5 - Fixed Grahpic url. 
 * January 8, 2019 Version 1.0.4 - Updated the grahpic to show new button. 
 * January 8, 2019 Version 1.0.3 - Added an Installs button for successful installs to show what has been updated (combining successful munki and applesus installs). Renamed "Clients" to "Computers", and "Installs" to "Software" (to indicate what is managed).
