@@ -16,7 +16,7 @@ $(document).on('appUpdate', function(e, lang) {
         //Gather the data from ManagedInstalls Module (thanks to John Eberle for providing custom getStats function)
         //One month = 720 hours
         var myObj,  x = "";
-        myObj = $.getJSON( appUrl + '/module/managedinstalls/get_stats/'+720, function( data ) {
+        myObj = $.getJSON( appUrl + '/module/managedinstalls/get_stats_custom/'+720, function( data ) {
 
         if(data.error){
             //alert(data.error);

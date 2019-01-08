@@ -1,6 +1,6 @@
 # Custom MunkiReport Munki Stats Widget
 
-> v. 1.0.6 
+> v. 1.0.8 
 > January 8, 2019  
 > Alex Narvey / Precursor.ca  
 
@@ -12,7 +12,8 @@ No warrantee is offered. Neither express nor implied. Use at your own risk.
 
 To use:
 
-1) Replace the get_stats function in managedinstalls/managedinstalls_controller.php with the code provided by John Eberle in the file Custom Get_Stats Function.txt
+1) Add the "get_stats_custom" function to the managedinstalls/managedinstalls_controller.php with the code provided by John Eberle in the file Get_Stats_Custom_Function.txt
+Do NOT replace the original "get_stats" function as other things rely on it.
 
 2) Place the munki_stats_widget.php file inside the local/views/widgets directory of MunkiReport 4
 
@@ -30,6 +31,7 @@ Notes:
 
 Release Notes:
 
+* January 8, 2019 Version 1.0.7 - Instead of modifying the managedinstall controller get_stats function we now add a custom function to it. Modified the Read Me and files accordingly.
 * January 8, 2019 Version 1.0.6 - Included instructions for replacing get_stats function in managedinstalls_contoller.php. 
 * January 8, 2019 Version 1.0.5 - Fixed Grahpic url. 
 * January 8, 2019 Version 1.0.4 - Updated the grahpic to show new button. 
