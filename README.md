@@ -1,36 +1,40 @@
 # Custom MunkiReport Munki Stats Widget
 
-> v. 1.0.8 
-> January 8, 2019  
+> v. 2.0.0 
+> July 29, 2020  
 > Alex Narvey / Precursor.ca  
 
 ![munki_stats_widget  view](https://github.com/precursorca/munki-stats-widget/blob/master/munki_stats_widget.png)
 
-A custom munkireport 4.0 Stats Widget to show statistics similar to early versions of munkireport 2.
+A custom munkireport Stats Widget to show statistics similar to early versions of munkireport 2.
 
 No warrantee is offered. Neither express nor implied. Use at your own risk.
 
+After many attempts to make my own, Arjen van Bochoven took pity on my and womped this up in 15 minutes! I made a few modifications to my own taste - as described below.
+
 To use:
 
-1) Add the "get_stats_custom" function to the managedinstalls/managedinstalls_controller.php with the code provided by John Eberle in the file Get_Stats_Custom_Function.txt
-Do NOT replace the original "get_stats" function as other things rely on it.
-
-2) Place the munki_stats_widget.php file inside the local/views/widgets directory of MunkiReport 4
+1) Place the munki_stats_widget.php file inside the local/views/widgets directory of MunkiReport PHP
 
 3) Call it from a dashboard or make a custom dashboard with a .yml file in /local/dashboards
 
 Notes:
 
-- The stats come from the Get_Stats function in the ManagedInstalls module.
-- In this case John Eberle modified the Get_Stats function to help pick out the correct arrays with JQuery.
-- The period is 720 hours (one month).
-- The formatting is borrowed from the MS_Office module.
+- The period is 720 hours (one month).  
+  //Set the hours to one month
+		var hours = 24 * 30;
+- I changed the "Clients" button to "Computers": by commenting out its title designation and creating a hard coded name:
+  <!-- <span data-i18n="client.clients"></span> -->
+   <span>Computers</span>
+- You can display counts as "totals" or by "clients" using the relevant Var.
+  for example in "Pending" I am showing the total by the number of clients that need pending updates so my client knows how many computers require updates
+  but in "Installs" I am showing the total number of items installed so my client has an idea of how many pieces of software are getting updated each month.
 - The Installs count is a total of Succesful_Installs_Munki_Installs and Successful_Installs_AppleSUS.
 - The Pending count is a total of Pending Munki Installs and Pending AppleSUS Installs.
-- Arjen van Bochoven schooled me on dealing with null array elements.
 
 Release Notes:
 
+* July 29, 2020 Version 2.0.0 - Abandoned my own code and posted the version that Arjen van Bochoven helped me with .
 * January 8, 2019 Version 1.0.7 - Instead of modifying the managedinstall controller get_stats function we now add a custom function to it. Modified the Read Me and files accordingly.
 * January 8, 2019 Version 1.0.6 - Included instructions for replacing get_stats function in managedinstalls_contoller.php. 
 * January 8, 2019 Version 1.0.5 - Fixed Grahpic url. 
