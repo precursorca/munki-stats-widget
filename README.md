@@ -24,8 +24,10 @@ Notes:
   //Set the hours to one month
 		var hours = 24 * 30;
 - I changed the "Clients" button to "Computers": by commenting out its title designation and creating a hard coded name:
+  ```
   <!-- <span data-i18n="client.clients"></span> -->
    <span>Computers</span>
+   ```
 - You can display counts as "totals" or by "clients" using the relevant Var.
   for example in "Pending" I am showing the total by the number of clients that need pending updates so my client knows how many computers require updates
   but in "Installs" I am showing the total number of items installed so my client has an idea of how many pieces of software are getting updated each month.
