@@ -1,7 +1,7 @@
 # Custom MunkiReport Munki Stats Widget
 
-> v. 2.0.0 
-> July 29, 2020  
+> v. 3.0.0 
+> April 16, 2023  
 > Alex Narvey / Precursor.ca  
 
 ![munki_stats_widget  view](https://github.com/precursorca/munki-stats-widget/blob/master/munki_stats_widget.png)
@@ -36,6 +36,7 @@ Notes:
 
 Release Notes:
 
+* April 16, 2023 Version 3.0.0 - Created a version to display properly in MunkiReport 6 with Bootstrap 4.
 * July 29, 2020 Version 2.0.0 - Abandoned my own code and posted the version that Arjen van Bochoven helped me with .
 * January 8, 2019 Version 1.0.7 - Instead of modifying the managedinstall controller get_stats function we now add a custom function to it. Modified the Read Me and files accordingly.
 * January 8, 2019 Version 1.0.6 - Included instructions for replacing get_stats function in managedinstalls_contoller.php. 
